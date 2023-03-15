@@ -1,0 +1,58 @@
+\documentclass[xelatex, twocolumn, a4j, ja=standard]{bxjsarticle}
+\usepackage{xeCJK}
+\setCJKmonofont{ipaexg.ttf}
+\usepackage{./marathon}
+
+\title{title}
+\author{Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\Sec{2.1}{Some section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Def}{2.1.1}
+    Some definition
+	\begin{eq}
+        x + y = y + x
+	\end{eq}
+\end{Def}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Ex}{2.2.2}
+    Some excercise
+	\begin{eq}
+        x * y = y * x
+	\end{eq}
+\end{Ex}
+\begin{proof}
+	\begin{eq}
+        \text{LHS} &= y * x \\
+                   &= \text{RHS}
+	\end{eq}
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Sim}{2.2.12}
+    Some simulation
+	\begin{eq}
+        x * y := y * x
+	\end{eq}
+\end{Sim}
+
+\begin{code}
+\begin{lstlisting}[language=Octave]
+ntrys = 10000
+for i in range(0, ntrys):
+  x = rand()
+  y = rand()
+  tsassert (x*y <= y*x);
+\end{lstlisting}
+\end{code}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
