@@ -1,0 +1,75 @@
+\usepackage{amssymb, amsmath, amsthm, bm, aligned-overset, mathtools}
+\usepackage{titlesec, listings, xcolor, tcolorbox}
+\tcbuselibrary{skins}
+
+%%
+%% section style
+%%
+
+\titleformat{\section}% command
+    [block]% shape
+    {\bfseries\large}% format
+    {\thesection}% label
+    {3em}% sep
+    {}% before-code
+
+%%
+%% box style
+%%
+
+\definecolor{defcolor}{rgb}{0.5, 0.5, 0}
+\newtcolorbox{box:def}{
+        empty, borderline={0pt}{0pt}{white},
+        borderline west={1pt}{1pt}{defcolor}
+}
+\definecolor{excolor}{rgb}{0, 0.7, 0}
+\newtcolorbox{box:ex}{
+        empty, borderline={0pt}{0pt}{white},
+        borderline west={1pt}{1pt}{excolor}
+}
+\definecolor{simcolor}{rgb}{0, 0.7, 0.7}
+\newtcolorbox{box:sim}{
+        empty, borderline={0pt}{0pt}{white},
+        borderline west={1pt}{1pt}{simcolor}
+}
+
+%%
+%% code style
+%%
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single
+}
+\lstset{style=mystyle}
+
+%%
+%% new command and environment
+%%
+
+\newcommand{\Sec}[2]{\section*{#1 \quad #2}}
+\newenvironment{Def}[1]{\begin{box:def}\textbf{Definition #1.}}{\end{box:def}}
+\newenvironment{Ex}[1]{\begin{box:ex}\textbf{Excercise #1.}}{\end{box:ex}}
+\newenvironment{Sim}[1]{\begin{box:sim}\textbf{Simulation #1.}}{\end{box:sim}}
+\newenvironment{code}{\leftline{\textit{Code}:}}{}
+\newenvironment{eq}{\begin{equation}\begin{aligned}}{\end{aligned}\end{equation}}
